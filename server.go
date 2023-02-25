@@ -1,3 +1,10 @@
 package main
 
-func main() {}
+import (
+	"fmt"
+  )
+  
+  
+func main() {
+	fmt.Print("Starting server at port")
+}
