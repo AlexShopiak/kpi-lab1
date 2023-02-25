@@ -14,6 +14,11 @@ func TimeHandler(w http.ResponseWriter, r *http.Request) {
     return
   }
   
+  if r.Method != "GET" {
+    http.Error(w, "This method is not supported.", http.StatusNotFound)
+    return
+  }
+
   fmt.Fprintf(w, "Your request: ")
 
   realtime := time.Now().Format(time.RFC3339)
