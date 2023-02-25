@@ -9,6 +9,11 @@ import (
 )
 
 func TimeHandler(w http.ResponseWriter, r *http.Request) {  
+  if r.URL.Path != "/time" {
+    http.Error(w, "Error 404 not found.", http.StatusNotFound)
+    return
+  }
+  
   fmt.Fprintf(w, "Your request: ")
 
   realtime := time.Now().Format(time.RFC3339)
