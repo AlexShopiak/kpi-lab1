@@ -19,8 +19,6 @@ func TimeHandler(w http.ResponseWriter, r *http.Request) {
     return
   }
 
-  fmt.Fprintf(w, "Your request: ")
-
   realtime := time.Now().Format(time.RFC3339)
   response := map[string]string{"time": realtime}
 
